@@ -1,0 +1,21 @@
+from colored import fg, bg, attr
+
+n,c1,c2 = input().split()
+n = int(n)
+flag = 1
+color1 = fg(c1) + bg(c1)
+color2 = fg(c2) + bg(c2)
+for i in range(n):
+    if n % 2 == 0:
+        if flag == 1:
+            flag = 0
+        else:
+            flag = 1
+    for j in range(n):
+        if flag == 0:
+            print(color1 + '  ',end='')
+            flag = 1
+        else:
+            print(color2 + '  ',end='')
+            flag = 0
+    print()     
